@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+
+    
+    <script src="js/mapFunctions.js" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5dSYyOwq2-_0wwja7ZoZkx4vcSdAqF-0&callback=initMap" defer></script>
+
+    <!-- Calendario-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    
+  </head>
+  <body style="background: var(--color1);">
+    
+    	<header class="head__publication">
+		<nav id="nav" class="nav2">
+			<div class="contenedor-nav">
+				<div class="logo-dash">
+					<img src="img/cabañaCopia.jpg">
+				</div>
+				<div class="titulo">
+					<h1>Timberhut</h1>			
+				</div>
+				<div class="enlaces" id="enlaces">
+					<a href="#" id="enlace-home" class="btn-header">Home</a>
+					<a href="#" id="enlace-deportes" class="btn-header">Deportes</a>
+					<a href="#" id="enlace-descubre" class="btn-header">Descubre</a>
+					<a href="#" id="enlace-contacto" class="btn-header">Contacto</a>
+				</div>
+				<div class="icono" id="open">
+					<span>&#9776;</span>
+				</div>
+
+			</div>
+		</nav>
+		
+	</header>
+
+	<section class="publication">
+		<div class="d-flex justify-content-center" id="publication_columns">
+			
+			<div class="p-5" id="publication__content">
+				
+				<h2 class="publication__h2--title">Sesión de Kayaking en Samao</h2>
+				<img src="https://images.pexels.com/photos/1497587/pexels-photo-1497587.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" id="publication__img">
+				<div class="publication__description" id="publication__description">
+					<div class="publication__description--tag">
+						<a href="">Kayak</a>
+						<a href="">Event</a>	
+					</div>
+					
+					<p>Este evento esta enfocado para toda la familia, podras aventurarte a realizar Kayaking en el lago de Samao, ingresa al link para mayores informes!</p>
+				</div>
+
+				<!--calendario-->
+				<div>
+					<input id="dateTime" width="234" />
+				    <script>
+				        $('#dateTime').datetimepicker({
+				            uiLibrary: 'bootstrap4',
+				            footer: true
+				        });
+				    </script>
+				</div>
+
+			</div>
+				
+
+			
+
+			 
+			</div>
+
+		
+		<div class="d-flex p-5 ">
+						
+			<div class="d-flex justify-content-between" id="publication__map">
+			<div></div>
+			<div  id="googleMap" style="width: 80%; height: 400px;"></div>
+			<div></div>
+			</div>
+			
+		</div>	
+
+		
+		
+
+
+	</section>
+ 	
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

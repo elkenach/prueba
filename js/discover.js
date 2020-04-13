@@ -1,0 +1,143 @@
+function getSports(){
+	var requestSport = new XMLHttpRequest(); //creando objeto 
+	requestSport.onreadystatechange = function(){
+		if (this.readyState ==4 && this.status ==200) {
+			var responseSport = this.responseText;
+			console.log(JSON.parse(responseSport));
+			displaySport(JSON.parse(responseSport));
+		}
+	}
+	requestSport.open('GET','http://localhost:8080/v1/sports',true);
+	requestSport.send();
+}
+
+function displaySport(dataSports){
+
+	console.log(dataSports);
+
+	var divContent=document.getElementById("content-post-pba");
+	for(let sport of dataSports){
+		
+		let divPba=document.createElement("div");
+		let divImg =document.createElement("div");
+		let divText =document.createElement("div");
+		let img=document.createElement("img");
+		let p=document.createElement("p");
+		let h4=document.createElement("h4");
+		
+
+		img.src=sport.photo;
+		p.innerText=sport.description;
+		h4.innerText=sport.name;
+
+		divImg.classList.add("img-content");
+		divText.classList.add("text-post");
+		p.classList.add("desc");
+		divPba.classList.add("content-post");
+		divPba.classList.add(sport.name);
+		
+
+		divImg.appendChild(img);
+		divText.appendChild(h4);
+		divText.appendChild(p);
+		divPba.appendChild(divImg);
+		divPba.appendChild(divText);
+		divContent.appendChild(divPba);
+
+		console.log(sport);
+	}
+
+
+
+}
+
+
+
+
+
+/*Codigo Elena v 2.0*/
+let nav = document.getElementById("nav");
+let menu = document.getElementById("enlaces");
+let open = document.getElementById("open");
+let buttons = document.getElementsByClassName("btn-header");
+let close = true;
+
+
+function menus(){
+	let Desplazamiento_Actual = window.pageYOffset;
+
+	if (Desplazamiento_Actual <= 380) {
+		nav.classList.remove("nav2");
+		nav.className = ("nav1");	
+		nav.style.transition = ".8s";
+		menu.style.top = "60px";
+		open.style.color = "white" ;
+	}else{
+		nav.classList.remove("nav1");
+		nav.className = ("nav2");
+		nav.style.transition = ".8s";
+		menu.style.top = "70px";
+		open.style.color = "black" ;
+	}
+}
+
+
+function opening(){
+    if(close){
+        menu.style.width = "45vw";
+        close = false;
+    }else{
+        menu.style.width = "0%";
+        menu.style.overflow = "hidden";
+        close = true;
+    }
+}
+
+window.addEventListener("load", function(){
+	menus();
+});
+
+window.addEventListener("click", function(e){
+	if (close == false) {
+		let span = document.querySelector("span");
+		if (e.target !== span && e.target !== open) {
+			menu.style.width = "0%";
+			menu.style.overflow = "hidden";
+			close = true;
+		}
+	}
+});
+
+window.addEventListener("scroll", function(){
+	console.log(window.pageYOffset);
+
+	menus(); 
+});
+
+window.addEventListener("resize", function(){
+	if (screen.width >= 700) {
+		close = true;
+		menu.style.removeProperty ("overflow");
+		menu.style.removeProperty ("width");
+	}
+});
+
+open.addEventListener("click", function(){
+	opening();
+});
+
+
+/* Codigo para filtrar Deportes*/
+
+$(function () {
+    $(".filter").click(function () {
+        $(this).addClass("active").siblings().removeClass("active");
+        let valor =  $(this).attr("data-nombre");
+        if(valor == "todos"){
+        	$(".content-post").show("1000");	
+        }else{
+        	$(".content-post").not("."+ valor).hide("1000");
+        	$(".content-post").filter("."+ valor).show("1000");
+        }        
+    });
+});
