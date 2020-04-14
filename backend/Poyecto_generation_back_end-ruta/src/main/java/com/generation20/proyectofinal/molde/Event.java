@@ -49,13 +49,14 @@ public class Event {
 			fetch = FetchType.LAZY, orphanRemoval = false)
 	@JoinColumn(name = "idEvent", referencedColumnName = "id")
 	public List<Route> route;
+	@Column(length = 30, nullable = false)
+	public String name;
 	
 	public Event() {}
 
-	
 	public Event(Integer id, Integer idUser, Integer idSport, String photo, String description, String link,
 			String eventTime, Date eventDate, Date createdAt, String nameAuthor, String nameSport, boolean visibility,
-			List<Route> route) {
+			List<Route> route, String name) {
 		super();
 		this.id = id;
 		this.idUser = idUser;
@@ -70,6 +71,15 @@ public class Event {
 		this.nameSport = nameSport;
 		this.visibility = visibility;
 		this.route = route;
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public List<Route> getRoute() {

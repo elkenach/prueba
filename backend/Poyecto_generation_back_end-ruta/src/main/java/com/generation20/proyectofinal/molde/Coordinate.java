@@ -21,15 +21,15 @@ public class Coordinate {
 	public Integer idRoute;
 	public Integer numberPoint;
 	@Column(nullable = false)
-	public float lat;
+	public double lat;
 	@Column(nullable = false)
-	public float lng;
+	public double lng;
 	@Temporal(TemporalType.TIMESTAMP)
 	public Date createdAt;
 	
 	public Coordinate() {}
 
-	public Coordinate(Integer id, Integer idRoute, Integer numberPoint, float lat, float lng, Date createdAt) {
+	public Coordinate(Integer id, Integer idRoute, Integer numberPoint, double lat, double lng, Date createdAt) {
 		super();
 		this.id = id;
 		this.idRoute = idRoute;
@@ -63,19 +63,19 @@ public class Coordinate {
 		this.numberPoint = numberPoint;
 	}
 
-	public float getLat() {
+	public double getLat() {
 		return lat;
 	}
 
-	public void setLat(float lat) {
+	public void setLat(double lat) {
 		this.lat = lat;
 	}
 
-	public float getLng() {
+	public double getLng() {
 		return lng;
 	}
 
-	public void setLng(float lng) {
+	public void setLng(double lng) {
 		this.lng = lng;
 	}
 

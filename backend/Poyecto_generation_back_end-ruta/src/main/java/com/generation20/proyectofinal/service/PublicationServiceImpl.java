@@ -11,6 +11,7 @@ import com.generation20.proyectofinal.dao.PublicationRepository;
 import com.generation20.proyectofinal.dao.SportRepository;
 import com.generation20.proyectofinal.dao.UserRepository;
 import com.generation20.proyectofinal.molde.Publication;
+import com.generation20.proyectofinal.molde.Route;
 import com.generation20.proyectofinal.molde.Sport;
 import com.generation20.proyectofinal.molde.User;
 
@@ -25,6 +26,8 @@ public class PublicationServiceImpl implements PublicationService{
 	private SportRepository sportRepository;
 	@Autowired
 	private StorageService storageService;
+	@Autowired
+	private RouteService routeService;
 	
 	@Override
 	public List<Publication> getAll() {
@@ -46,11 +49,18 @@ public class PublicationServiceImpl implements PublicationService{
 	public Publication save(Publication publication, MultipartFile file) {
 		User user = userRepository.findById(publication.getIdUser()).get();
 		Sport sport = sportRepository.findById(publication.getIdSport()).get();
+		publication.setNameAuthor(user.getUserName());
+		publication.setNameSport(sport.getName());
 		publication.setPhoto(storageService.uploadFile(file));
 		publication.setCreatedAt(new Date());
 		publication.setVisibility(true);
-		publication.setNameAuthor(user.getUserName());
-		publication.setNameSport(sport.getName());
+		Publication publicationSave = publicationRepository.save(publication);
+		List<Route> routes = publication.getRoute();
+		for (Route route : routes) {
+			route.setIdPublication(publicationSave.getId());
+			routeService.save(route);
+		}
+		
 		return publicationRepository.save(publication);
 	}
 	@Override

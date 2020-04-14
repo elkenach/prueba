@@ -44,12 +44,13 @@ public class Publication {
 			fetch = FetchType.LAZY, orphanRemoval = false)
 	@JoinColumn(name = "idPublication", referencedColumnName = "id")
 	public List<Route> route;
+	@Column(length = 30, nullable = false)
+	public String name;
 	
 	public Publication() {}
 
-
 	public Publication(Integer id, Integer idUser, Integer idSport, String text, String photo, String link,
-			boolean visibility, String nameAuthor, String nameSport, Date createdAt, List<Route> route) {
+			boolean visibility, String nameAuthor, String nameSport, Date createdAt, List<Route> route, String name) {
 		super();
 		this.id = id;
 		this.idUser = idUser;
@@ -62,9 +63,16 @@ public class Publication {
 		this.nameSport = nameSport;
 		this.createdAt = createdAt;
 		this.route = route;
+		this.name = name;
 	}
 
-	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public List<Route> getRoute() {
 		return route;

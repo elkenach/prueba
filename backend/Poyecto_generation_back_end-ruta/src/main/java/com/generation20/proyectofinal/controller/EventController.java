@@ -31,19 +31,8 @@ public class EventController {
 	
 	@PostMapping
 	public ResponseEntity<Event> createEvent(@RequestParam("event") String eventJson,
-//			@RequestParam("idSport") Integer idSport,
-//			@RequestParam("description") String description,
-//			@RequestParam("link") String link,
-//			@RequestParam("eventTime") String eventTime,
-//			@RequestParam("eventDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date eventDate,
 			@RequestParam("file") MultipartFile file) {
-//		Event event = new Event();
-//		event.setIdUser(idUser);
-//		event.setIdSport(idSport);
-//		event.setDescription(description);
-//		event.setLink(link);
-//		event.setEventTime(eventTime);
-//		event.setEventDate(eventDate);
+
 		Event event = null;
 		try {
 			event = new ObjectMapper().readValue(eventJson, Event.class);
