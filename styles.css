@@ -1,0 +1,576 @@
+:root{
+	--color1:#E5E7E9;
+	--color2: #587F39;
+	--colortl:#666633;
+	--color-letra:#AEB6BF;
+	--titulos:25px;
+    --margenes:45px;
+	--espacios:5px;
+	--espacio-cont:5px;
+	--espacio-img:20px;
+	--letter-title:'open sans';
+	--letter-link:'open sans';
+	--letter-subtitle:'open sans';
+	--letter-content:'open sans';
+	--shadow: 0 0 6px 0 rgba(0,0,0,5);
+}
+
+
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body{
+	background: var(--color1);
+	font-family: (--letter-content);
+
+}
+
+img{
+	vertical-align: top;
+}
+
+/* Header*/
+
+.head-landing{
+	width: 100%;
+	position: fixed;
+
+}
+
+.cont-header{
+	display: flex;
+	margin: auto;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1000px;
+	height: inherit;
+	overflow: hidden;
+}
+
+.logo img{
+	width: 120px;
+	height: 120px;
+	border-radius:150px;
+  	border:1px solid black;
+  	margin-bottom: 13px;
+  	margin-top: 13px;
+}
+
+.title h1{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;	
+	font-size: 70px;
+	color: var(--colortl);
+	font-family: (--letter-title);
+}
+
+
+
+/*Main content*/
+.contenedor{
+	margin: auto;
+	padding: var(--margenes) 2px;
+	width: 98%;
+	max-width: all;
+	text-align: center;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+#center h1{
+	color: var(--colortl);
+	font-size: 55px;
+}
+.text{
+	color: var(--colortl);
+	font-size: 25px;
+	margin-top: 50px;
+}
+ion-icon{
+	
+	color: black;
+}
+.icons{
+	display: flex;
+	justify-content: space-between;
+	margin: auto;
+	flex-wrap: wrap;
+	margin-top: 0px;
+	font-size: 27px;
+}
+
+.contenedor{
+	display: flex;	
+	flex-wrap: wrap;
+}
+
+.cont{
+	width: 33%;	
+	overflow: hidden;
+	height: 250px;
+}
+
+
+
+#lados{
+	box-shadow: 0 0 6px 0 rgba(0,0,0,5);
+	justify-content: space-around;
+}
+
+.cont-image{
+	height: 100%;
+}
+.cont img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	padding: 5px;
+
+}
+
+
+/* ----- Dashboard ------ */
+
+#head-dash{
+	width: 100%;
+	position: fixed;
+}
+
+.cont-head-dash{
+	display: flex;
+	margin: auto;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1000px;
+	height: inherit;
+	overflow: hidden;
+}
+
+.logo-dash img{
+	width: 55px;
+	height: 55px;
+	border-radius:150px;
+  	border:1px solid black;
+  	margin-bottom: 6px;
+  	margin-top: 5px;
+}
+
+.title h1{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;	
+	font-size: 40px;
+	margin-left: 23%;
+	color: var(--colortl);
+	font-family: (--letter-title);
+}
+
+
+ .head-dash{
+ 	widows: 100%;
+ 	height: 540px; 
+ 	background: linear-gradient(to bottom,
+ 		rgba(213, 216, 220, .7),
+ 		rgba(33, 47, 61 , .7),
+ 		rgba(23, 32, 42, .8)
+ 		), url(https://ecosistemas.ovacen.com/wp-content/uploads/2018/01/bosque.jpg);
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+ }
+/* aquí van los estilos especificos del publication/event Register */
+
+.publication{
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+}
+
+ .head__publication{
+ 	widows: 100%;
+ 	height: 55px; 
+ 	background: linear-gradient(to bottom,
+ 		rgba(213, 216, 220, .7),
+ 		rgba(33, 47, 61 , .7),
+ 		rgba(23, 32, 42, .8)
+ 		);
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+ }
+
+
+#publication__img{
+	width: 400px;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 5px;
+	box-shadow: var(--shadow);
+}
+#publication__description{
+	display: flex;
+	flex-wrap: wrap;
+	width: 400px;
+	flex-direction: column;
+	color: var(--colortl);
+}
+#displayEvent__img{
+	width: 300px;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 5px;
+	box-shadow: var(--shadow);
+	margin-bottom: 10px;
+}
+
+#publication__map{
+
+	padding: 25px;
+	box-shadow:0 0 6px 0 rgba(0,0,0,5); 
+	width: 100%
+
+}
+
+#register__content{
+	width: 100%;
+	height: 90%;
+	box-shadow: var(--shadow);
+}
+
+#register2__tag{
+	display: flex;
+	flex-direction: column;
+}
+
+.custom-file-label{
+	align-items: center;
+}
+
+/*Hasta aqui llegan los estilos de Omar*/
+
+nav{
+	width: 100%;
+	position: fixed;
+	box-shadow: var(--shadow);
+}
+.nav1{
+	background: transparent;	
+	color: #fff;
+}
+.nav2{
+	background: var(--color1);
+	height: 55px;
+	color: #000;
+}
+
+.contenedor-nav{
+	display: flex;
+	margin: auto;
+	width: 97%;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1000px;
+	height: inherit;
+	overflow: hidden;
+}
+
+nav .enlaces{
+	display: inline-block;
+	width: 30%;
+}
+
+nav .enlaces a{
+	display: inline-block;
+	padding: 5px 0;
+	margin-right: 17px;
+	font-size: 15px;
+	font-weight: 300;
+	text-decoration: none;
+	border-bottom: 3px solid transparent;
+	color: inherit;
+	font-family: (--letter-link);
+}
+
+nav .enlaces a:hover{
+	border-bottom: 3 px solid #566573;
+	transition: 0.6s;
+}
+
+.icono{
+	display: none;
+	font-size: 24px;
+	padding: 23.5 20px;
+}
+
+.text-dash{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	color: var(--color-letra);
+	overflow: hidden;
+	text-align: center;
+	font-size: 30px;
+	font-family: (--letter-subtitle);
+}
+
+.informacion{
+	margin: auto;
+	padding: var(--margenes)0;
+	width: 98%;
+	max-width: 1000px;
+	text-align: center;
+	overflow: hidden;
+
+}
+
+.informacion h4{
+	font-size: 35px;
+	color: var(--colortl);
+	font-family: (--letter-subtitle);
+}
+
+.informacion p{
+	font-size: 20px;
+	color: var(--colortl);
+	font-family: (--letter-content);
+}
+
+
+.botones-pref{
+	overflow: hidden;
+}
+
+.botones-pref li{
+	display: inline-block;
+	text-align: center;
+	margin-left: var(--espacios);
+	margin-bottom: var(--espacio-cont);
+	padding: 6px 12px;
+	border: 1px solid var(--color2);
+	list-style: none;
+	color: var(--color2);
+	border-radius: 8px;
+}
+
+.botones-pref li:hover{
+	background: var(--color2);
+	color: white;
+	cursor: pointer;
+}
+
+.botones-pref .active{
+	background: var(--color2);
+	color: white;
+}
+
+.post{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	
+}
+.post .content-post{
+	width: 85%;
+	box-shadow: var(--shadow);
+	height: 600px;
+	overflow: hidden;
+	margin-bottom: var(--espacio-img);
+}
+
+.img-content{
+	height: 85%;
+	width: 100%;
+}
+.img-content img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;	
+}
+
+.text-post{
+	height: 10%
+}
+.text-post h4 {
+	height: 30px;
+}
+
+footer{
+	background-color: #556B2F;
+	
+
+}
+
+.logo-f{
+	width: 8%;
+	margin: auto;
+	margin-bottom:15px;
+	
+	
+}
+.logo-f img{
+	width: 100%;
+	border-radius:150px;
+  	border:1px solid black;
+  	display: inline-block;
+  	margin-top: 15px;
+}
+
+footer p{	
+	text-align: center;
+}
+
+/*Estilos v2.0 Elena*/
+
+
+@media screen and (max-width: 700px){
+	.nav2{
+		color: white;
+	}
+
+	.icono{
+		display: block;
+		cursor: pointer;
+	}
+
+	.enlaces{
+		position: fixed;
+		top: 80px;
+		background: #AAAAAA;	
+		left: 0;
+		height: 100%;
+		transition: 1s;
+		width: 100%;
+		overflow: hidden;
+	}
+
+	.enlaces a{
+		display: block;
+		width: 100%;
+		height: 50px;
+		padding: 20px;
+		text-align: center;
+		background: transparent;
+		color: white;
+		cursor: pointer;
+	}
+}
+
+
+
+/*  Profile */
+
+.arriva{
+	 overflow:hidden;
+	 display: flex;
+}
+.content-profile{
+	margin-top: 8%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 25%;
+	box-shadow:0 0 6px 0 rgba(0,0,0,5);
+	height: 200px;
+	overflow: hidden;
+	margin-bottom: var(--espacio-img);
+	float: left;
+}
+
+
+.datos-profile{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	display: inline-block;
+	float: right;
+}
+.arriba h4{	
+	margin-right: 35%;
+	margin-top: 8%;
+	float: right;
+}
+
+.datos-profile{
+	float: right;
+	margin-right: 27%;
+	padding: 0px;
+	margin-top: 10px;
+	width: : 50%;
+	border: 1px;
+	border-color: black;
+}
+
+.datos-prof{
+	width: : 50%;
+
+	
+}
+
+
+th, td{
+	padding: 10px;
+
+}
+
+.text-profile{
+	width: 1000px;
+	margin-top: 3%;
+	float: left;
+	margin-left: 5%;	
+}
+.text-post h4 p{
+	margin-left: 5px;
+}
+
+.texto-descripcion{
+	width: 70%;
+	height: 250px;
+	border-style: solid;
+	border: 1;
+	border-color: black;
+	
+	background-color: white;
+}
+
+.etiquetas-profile{
+	float:center;
+	margin-top: 5%;
+}
+.etiquetas-profile li{
+	display: inline-block;
+	text-align: center;
+	margin-left: var(--espacios);
+	margin-bottom: var(--espacio-cont);
+	padding: 8px 20px ;
+	list-style: none;
+	color: var(--color2);
+	border-radius:8px;
+}
+.etiquetas-profile a{
+	color: var(--color2);
+}
+
+.etiquetas-profile li:hover{
+	background: #91A68B;
+	color: white;
+	cursor: pointer;
+}
+
+
+
+
+
+
