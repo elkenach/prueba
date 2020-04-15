@@ -65,13 +65,14 @@ public class EventController {
 			@DateTimeFormat(pattern = "yyyy-MM-dd") Date eventDate){
 		return new ResponseEntity<>(eventService.getAllByEventDate(eventDate), HttpStatus.OK);
 	}
-	@GetMapping("/between/")
+	@GetMapping("/byIdSport")
 	public ResponseEntity<List<Event>> getAllByEventDateBetween(
+			@RequestParam(value = "idSport") Integer idSport,
 			@RequestParam(value = "firstDate")
 			@DateTimeFormat(pattern = "yyyy-MM-dd") Date firstDate,
 			@RequestParam(value = "endDate")
 			@DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate){
-		return new ResponseEntity<>(eventService.getByEventDateBetween(firstDate, endDate), HttpStatus.OK);
+		return new ResponseEntity<>(eventService.getByIdSportAndEventDateBetween(idSport, firstDate, endDate), HttpStatus.OK);
 	}
 	@GetMapping("/by")
 	public ResponseEntity<Event> getById(@RequestParam(value = "id") Integer id) {
@@ -85,5 +86,13 @@ public class EventController {
 	@DeleteMapping
 	public ResponseEntity<Event> remove(@RequestParam(value = "id") Integer id){
 		return new ResponseEntity<>(eventService.remove(id), HttpStatus.OK);
+	}
+	@GetMapping("/between/")
+	public ResponseEntity<List<Event>> getAllByEventDateBetween(
+			@RequestParam(value = "firstDate")
+			@DateTimeFormat(pattern = "yyyy-MM-dd") Date firstDate,
+			@RequestParam(value = "endDate")
+			@DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate){
+		return new ResponseEntity<>(eventService.getByEventDateBetween(firstDate, endDate), HttpStatus.OK);
 	}
 }

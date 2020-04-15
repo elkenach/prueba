@@ -19,4 +19,5 @@ public interface EventService {
 	List<Event> getByEventDateBetween(Date firstDate, Date endDate);
 	List<Event> getByVisibility();
 	Event remove(Integer id);
+	List<Event> getByIdSportAndEventDateBetween(Integer id, Date firstDate, Date endDate);
 }

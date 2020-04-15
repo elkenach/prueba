@@ -91,4 +91,8 @@ public class EventServiceImpl implements EventService{
 	public List<Event> getByVisibility() {
 		return eventRepository.findByVisibility(true);
 	}
+@Override
+	public List<Event> getByIdSportAndEventDateBetween(Integer id, Date firstDate, Date endDate) {
+		return eventRepository.findByIdSportAndEventDateBetweenOrderByEventDate(id, firstDate, endDate);
+	}
 }
