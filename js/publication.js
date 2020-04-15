@@ -1,52 +1,88 @@
 
-function getSports(){
-	var requestSport = new XMLHttpRequest(); //creando objeto 
-	requestSport.onreadystatechange = function(){
+
+function getPublication(){
+	
+	var requestPublication = new XMLHttpRequest(); //creando objeto 
+	requestPublication.onreadystatechange = function(){
 		if (this.readyState ==4 && this.status ==200) {
-			var responseSport = this.responseText;
-			console.log(JSON.parse(responseSport));
-			displaySport(JSON.parse(responseSport));
+			var responsePublication = this.responseText;
+			
+			//console.log(JSON.parse(responsePublication));
+			displayPublication(JSON.parse(responsePublication));
 		}
 	}
-	requestSport.open('GET','http://localhost:8080/v1/sports',true);
-	requestSport.send();
+	requestPublication.open('GET','http://localhost:8080/v1/publications/by?id=1',true);
+	requestPublication.send();
 }
 
-function displaySport(dataSports){
+function displayPublication(dataPublication){
 
-	console.log(dataSports);
+	let publication=dataPublication;
+	//console.log(dataPublication);
 
-	var divContent=document.getElementById("content-post-pba");
-	for(let sport of dataSports){
+	var divContent=document.getElementById("content-publication");
+	
 		
-		let divPba=document.createElement("div");
-		let divImg =document.createElement("div");
-		let divText =document.createElement("div");
+
+		let sectionPublication=document.createElement("section");
+		let divPubCol=document.createElement("div");
+		let divPubNull1=document.createElement("div");
+		let divPubCont=document.createElement("div");
+		let h2=document.createElement("h2");
 		let img=document.createElement("img");
+		let divPubDesc= document.createElement("div");
+		let divPubDescTag= document.createElement("div");
+		let a=document.createElement("a");
 		let p=document.createElement("p");
-		let h4=document.createElement("h4");
+
+		let divMapContainer=document.createElement("div");
+		let divMapContainerChild=document.createElement("div");
+		let divNull1=document.createElement("div");
+		let divMap=document.createElement("div");
+		let divNull2=document.createElement("div");
 		
+		let divPubNull2=document.createElement("div");
 
-		img.src=sport.photo;
-		p.innerText=sport.description;
-		h4.innerText=sport.name;
+		h2.innerText=publication.name;
+		img.src=publication.photo;
+		a.innerText=publication.link;
+		p.innerText=publication.description;
 
-		divImg.classList.add("img-content");
-		divText.classList.add("text-post");
-		p.classList.add("desc");
-		divPba.classList.add("content-post");
-		divPba.classList.add(sport.name);
+
+		sectionPublication.classList.add("publication-event");
+		divPubCol.classList.add("d-flex");
+		divPubCol.classList.add("justify-content-center");
+		divPubCont.classList.add("p-5");
+		img.id="publication__img";
+		h2.classList.add("publication__h2--title");
+		divPubDesc.classList.add("publication__description");
+		divPubDesc.id="publication__description";
+		divPubDescTag.classList.add("publication__description--tag");
+		divMapContainer.classList.add("d-flex");
+		divMapContainer.classList.add("p-5");
+		divMapContainerChild.classList.add("d-flex");
+		divMapContainerChild.classList.add("justify-content-between");
+		divMapContainerChild.id="publication__map";
+		divMap.id="googleMap";
+
+		divPubDescTag.appendChild(a);
+		divPubDesc.appendChild(divPubDescTag);
+		divPubDesc.appendChild(p);
+		divPubCont.appendChild(h2);
+		divPubCont.appendChild(img);
+		divPubCont.appendChild(divPubDesc);
+		divPubCol.appendChild(divPubCont);
+		sectionPublication.appendChild(divPubCol);
+		sectionPublication.appendChild(divMapContainer);
+		divContent.appendChild(sectionPublication);
+		divMapContainerChild.appendChild(divNull1);
+		divMapContainerChild.appendChild(divMap);
 		
+		divMapContainerChild.appendChild(divNull2);
+		divMapContainer.appendChild(divMapContainerChild);;
 
-		divImg.appendChild(img);
-		divText.appendChild(h4);
-		divText.appendChild(p);
-		divPba.appendChild(divImg);
-		divPba.appendChild(divText);
-		divContent.appendChild(divPba);
-
-		console.log(sport);
-	}
+		console.log(publication);
+	
 
 
 

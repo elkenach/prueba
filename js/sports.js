@@ -18,6 +18,9 @@ function displaySport(dataSports){
 	var divContent=document.getElementById("content-post-pba");
 	for(let sport of dataSports){
 		
+		console.log(sport.id);
+		DinamicId=sport.id;
+
 		let divPba=document.createElement("div");
 		let divImg =document.createElement("div");
 		let divText =document.createElement("div");
@@ -29,6 +32,7 @@ function displaySport(dataSports){
 		img.src=sport.photo;
 		p.innerText=sport.description;
 		h4.innerText=sport.name;
+		
 
 		divImg.classList.add("img-content");
 		divText.classList.add("text-post");
@@ -36,6 +40,7 @@ function displaySport(dataSports){
 		divPba.classList.add("content-post");
 		sport.name=sport.name.replace(/ /g,"");
 		divPba.classList.add(sport.name);
+
 		
 
 		divImg.appendChild(img);
@@ -44,6 +49,7 @@ function displaySport(dataSports){
 		divPba.appendChild(divImg);
 		divPba.appendChild(divText);
 		divContent.appendChild(divPba);
+		
 
 		console.log(sport);
 	}

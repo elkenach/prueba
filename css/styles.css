@@ -256,6 +256,21 @@ ion-icon{
 	align-items: center;
 }
 
+.postEvent_title{
+display: flex;
+
+}
+
+.postEvent__h2--title{
+
+}
+
+#googleMap{
+	width: 80%;
+	height: 400px
+}
+
+
 /*Hasta aqui llegan los estilos de Omar*/
 
 nav{
@@ -472,7 +487,7 @@ footer p{
 
 /*  Profile */
 
-.arriva{
+.arriba{
 	 overflow:hidden;
 	 display: flex;
 }
