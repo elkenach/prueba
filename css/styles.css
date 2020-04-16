@@ -300,7 +300,7 @@ display: flex;
 	max-width: 1000px;
 	height: inherit;
 	position: absolute;
-    left: 19%;	
+    left: 18%;	
 }
 
 nav .enlaces{
@@ -329,6 +329,13 @@ nav .enlaces a:hover{
 .ham{
 	float: right;
 }
+
+.drop{
+
+	float: right;
+	margin-left: 2px;
+}
+
 .icono{
 	display: none;
 	font-size: 24px;
