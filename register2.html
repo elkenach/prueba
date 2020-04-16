@@ -18,30 +18,45 @@
     
   </head>
   <body>
-    
-    	<header class="head__publication">
+
+  	<header class="head-profile">   
 		<nav id="nav" class="nav2">
 			<div class="contenedor-nav">
+
 				<div class="logo-dash">
-					<img src="img/cabañaCopia.jpg">
-				</div>
-				<div class="titulo">
-					<h1>Timberhut</h1>			
-				</div>
-				<div class="enlaces" id="enlaces">
-					<a href="#" id="enlace-home" class="btn-header">Home</a>
-					<a href="#" id="enlace-deportes" class="btn-header">Deportes</a>
-					<a href="#" id="enlace-descubre" class="btn-header">Descubre</a>
-					<a href="#" id="enlace-contacto" class="btn-header">Contacto</a>
-				</div>
-				<div class="icono" id="open">
-					<span>&#9776;</span>
+					<img class="logo1" src="img/cabañaCopia.jpg">
 				</div>
 
+				<div class="titulo text-dash">
+					<h1>Timberhut</h1>			
+				</div>
+
+				<div class="enlaces" id="enlaces">
+					<a href="dashboard.html" id="enlace-home" class="btn-header">Dashboard</a>
+					<a href="discover.html" id="enlace-descubre" class="btn-header">Descubre</a>
+
+					<a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Eventos</span></a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        					<a class="dropdown-item" href="event.html">Evento</a>
+        					<a class="dropdown-item" href="calendar_display.html">Calendario</a>
+        				</div>
+
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>&#9776;</span></a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        					<a class="dropdown-item" href="profile.html">Perfil</a>
+        					<a class="dropdown-item" href="postPublication.html">Publicación</a>
+        				</div>
+        				
+					<div class="icono" id="open">
+						<span>&#9776;</span>
+					</div>
+				</div>
 			</div>
 		</nav>
-		
-	</header>
+	</header>  		
+    
+    	
+
 
 	<section class="publication">
 		<div class="d-flex justify-content-between" id="publication_columns">
@@ -117,6 +132,15 @@
 		</div>
 	</section>
 
+	<footer id="contacto">
+        <div id="contacto" class="footer">
+			<div class="logo-f">
+				<img src="img/cabañaCopia.jpg">				
+			</div>	
+			<p>Pasion por la naturaleza</p>		
+		</div>
+	</footer>
+
 
 
 
@@ -128,5 +152,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="js/register2.js"></script>
+    
   </body>
 </html>

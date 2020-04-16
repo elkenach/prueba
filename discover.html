@@ -14,28 +14,40 @@
 </head>
 <body>
 
-	<header class="head__publication">
+	<header class="head-dash">   
 		<nav id="nav" class="nav2">
 			<div class="contenedor-nav">
+
 				<div class="logo-dash">
-					<img src="img/cabañaCopia.jpg">
-				</div>
-				<div class="titulo">
-					<h1>Timberhut</h1>			
-				</div>
-				<div class="enlaces" id="enlaces">
-					<a href="#" id="enlace-home" class="btn-header">Home</a>
-					<a href="#" id="enlace-deportes" class="btn-header">Deportes</a>
-					<a href="#" id="enlace-descubre" class="btn-header">Descubre</a>
-					<a href="#" id="enlace-contacto" class="btn-header">Contacto</a>
-				</div>
-				<div class="icono" id="open">
-					<span>&#9776;</span>
+					<img class="logo1" src="img/cabañaCopia.jpg">
 				</div>
 
+				<div class="titulo text-dash">
+					<h1>Timberhut</h1>			
+				</div>
+
+				<div class="enlaces" id="enlaces">
+					<a href="dashboard.html" id="enlace-home" class="btn-header">Dashboard</a>
+					<a href="sports.html" id="enlace-descubre" class="btn-header">Sports</a>
+					<a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Eventos</span></a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        					<a class="dropdown-item" href="event.html">Evento</a>
+        					<a class="dropdown-item" href="calendar_display.html">Calendario</a>
+        				</div>
+
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>&#9776;</span></a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        					<a class="dropdown-item" href="profile.html">Perfil</a>
+        					<a class="dropdown-item" href="postPublication.html">Publicación</a>
+        				</div>
+				</div>
 			</div>
 		</nav>
-		
+
+		<div class="text-dash">
+			<p>Descubre</p>
+			<p>nuevas pasiones</p>
+		</div>
 	</header>
 
 	<main class="informacion" id="info">
@@ -77,7 +89,7 @@
 			<div class="logo-f">
 				<img src="img/cabañaCopia.jpg">				
 			</div>	
-			<p>La pasion por la naturaleza</p>		
+			<p>Pasión por la naturaleza</p>		
 		</div>
 	</footer>
 
@@ -86,6 +98,6 @@
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-
+	<script src="js/navbar.js"></script>
 </body>
 </html>
