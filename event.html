@@ -21,63 +21,42 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-    <title>Event</title>
+    
   </head>
   <body onload="getEvents()" style="background: var(--color1);">
     
-    	<header class="head-dash">   
+    	<header class="head__publication">
 		<nav id="nav" class="nav2">
 			<div class="contenedor-nav">
-
 				<div class="logo-dash">
-					<img class="logo1" src="img/cabañaCopia.jpg">
+					<img src="img/cabañaCopia.jpg">
 				</div>
-
-				<div class="titulo text-dash">
+				<div class="titulo">
 					<h1>Timberhut</h1>			
 				</div>
-
 				<div class="enlaces" id="enlaces">
-					<a href="dashboard.html" id="enlace-home" class="btn-header">Dashboard</a>
-					<a href="sports.html" id="enlace-descubre" class="btn-header">Sports</a>
-					
-					<div class="drop">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>&#9776;</span></a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        					<a class="dropdown-item" href="profile.html">Perfil</a>
-        					<a class="dropdown-item" href="publication.html">Publicación</a>
-        				</div>
-					</div>
-					<div class="drop">
-						<a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Eventos</span></a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        					<a class="dropdown-item" href="event.html">Evento</a>
-        					<a class="dropdown-item" href="calendar_display.html">Calendario</a>
-        				</div>
-					</div>
+					<a href="#" id="enlace-home" class="btn-header">Home</a>
+					<a href="#" id="enlace-deportes" class="btn-header">Deportes</a>
+					<a href="#" id="enlace-descubre" class="btn-header">Descubre</a>
+					<a href="#" id="enlace-contacto" class="btn-header">Contacto</a>
 				</div>
+				<div class="icono" id="open">
+					<span>&#9776;</span>
+				</div>
+
 			</div>
 		</nav>
-
-		<div class="text-dash">
-			<p>Eventos</p>
-			<p>de aventura</p>
-		</div>
+		
 	</header>
 
 	<section class="publication" id="content-event">
-		<br><br>
-		<div class="publication__description " id="publication_columns"> 
-
-			<h2 class="publication__h2--title">Sesión de Kayaking en Samao</h2><br> <br>
-
-			<div class="media " id="publication__content">
+		<div class="d-flex justify-content-center" id="publication_columns">
+			
+			<div class="p-5" id="publication__content">
 				
-				
-				<img id="img-content" src="https://images.pexels.com/photos/1497587/pexels-photo-1497587.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" >
-				
-				<div class="media-body publication__description" id="publication__description">
-
+				<h2 class="publication__h2--title">Sesión de Kayaking en Samao</h2>
+				<img src="https://images.pexels.com/photos/1497587/pexels-photo-1497587.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" id="publication__img">
+				<div class="publication__description" id="publication__description">
 					<div class="publication__description--tag">
 						<a href="">Kayak</a>
 						<a href="">Event</a>	
@@ -87,7 +66,7 @@
 				</div>
 
 				<!--calendario-->
-				<div class="calendario">
+				<div>
 					<input id="dateTime" width="234" />
 				    <script>
 				        $('#dateTime').datetimepicker({
@@ -97,15 +76,20 @@
 				    </script>
 				</div>
 
-			</div>			 
-		</div>
+			</div>
+				
+
+			
+
+			 
+			</div>
 
 		
 		<div class="d-flex p-5 ">
 						
 			<div class="d-flex justify-content-between" id="publication__map">
 			<div></div>	
-			<div  id="googleMap"></div>
+			<div  id="googleMap" style="width: 80%; height: 400px;"></div>
 			<div></div>
 			</div>
 			
@@ -117,16 +101,6 @@
 
 	</section>
  	
- 	<footer id="contacto">
-        <div id="contacto" class="footer">
-			<div class="logo-f">
-				<img src="img/cabañaCopia.jpg">				
-			</div>	
-			<p>Pasión por la naturaleza</p>		
-		</div>
-	</footer>
-
-
 
 
     <!-- Optional JavaScript -->
@@ -135,8 +109,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	<script src="js/event.js"></script>
-	<script src="js/discover.js"></script>
-	<script src="js/navbar.js"></script>
 
   </body>
 </html>

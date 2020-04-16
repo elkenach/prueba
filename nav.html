@@ -1,10 +1,8 @@
-<!doctype html>
-<html lang="en">
-  <head>
-
-
-
-    <!-- Required meta tags -->
+<!DOCTYPE html>
+<html>
+<head>
+	
+<!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -15,68 +13,69 @@
     
     <script src="js/mapFunctions.js" defer></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5dSYyOwq2-_0wwja7ZoZkx4vcSdAqF-0&callback=initMap" defer></script>
-    
-  </head>
-  <body>
-    
-    	<header class="head__publication">
+	<title>Nav Prueba</title>
+</head>
+<body><!-- Cambio ***** </!-->
+
+	<header class="head-dash">   
 		<nav id="nav" class="nav2">
 			<div class="contenedor-nav">
+
 				<div class="logo-dash">
-					<img src="img/cabañaCopia.jpg">
+					<img class="logo1" src="img/cabañaCopia.jpg">
 				</div>
-				<div class="titulo">
+
+				<div class="titulo text-dash">
 					<h1>Timberhut</h1>			
 				</div>
+
 				<div class="enlaces" id="enlaces">
 					<a href="#" id="enlace-home" class="btn-header">Home</a>
-					<a href="#" id="enlace-deportes" class="btn-header">Deportes</a>
-					<a href="#" id="enlace-descubre" class="btn-header">Descubre</a>
-					<a href="#" id="enlace-contacto" class="btn-header">Contacto</a>
+					<a href="discover.html" id="enlace-descubre" class="btn-header">Descubre</a>
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Perfil</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        					<a class="dropdown-item" href="profile.html">Perfil</a>
+        					<a class="dropdown-item" href="event.html">Eventos</a>
+        				</div>
+					<div class="icono" id="open">
+						<span>&#9776;</span>
+					</div>
 				</div>
-				<div class="icono" id="open">
-					<span>&#9776;</span>
-				</div>
-
 			</div>
 		</nav>
-		
+
+		<div class="text-dash frase">
+			<p>"La diferencia entre lo imposible y lo posible </p>
+			<p>depende de la voluntad de un hombre"</p>
+			<p>Tommy Lasorda</p>
+		</div>
 	</header>
 
-	<section class="publication">
-		<div class="d-flex justify-content-between" id="publication_columns">
-			<div class="p"></div>
-			<div class="p-5" id="publication__content">
-				
-				<h2 class="publication__h2--title">Paseo en Cerro viejo</h2>
-				<img src="https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" id="publication__img">
-				<div class="publication__description" id="publication__description">
-					<div class="publication__description--tag">
-						<a href="">Hiking</a>
-						<a href="">Hiker</a>	
-					</div>
-					
-					<p>En esta expedición podrás acercarte al famoso cerro viejo, ubicado en las afueras de tlajomulco.
-					recorridos usualmente en aproximadamente 2hr y 30min.</p>
-				</div>
-				<div id="googleMap" style="width: 100%; height: 400px; box-shadow:0 0 8px 0 rgba(0,0,0,5)">probanding</div>
 
-			</div>
-			<div class="p">
-				
-			</div>
+	<br>
+	<body>
+		<p style="text-align: center;"> Hola </p>
+		<br>
+		<h1> que onda</h1>
+		<h1> que onda</h1>
+		<h1> que onda</h1>
+	</body>
+
+	<footer id="contacto">
+        <div id="contacto" class="footer">
+			<div class="logo-f">
+				<img src="img/cabañaCopia.jpg">				
+			</div>	
+			<p>Pasion por la naturaleza</p>		
 		</div>
-	</section>
+	</footer>
 
 
-
-
-
-
-    <!-- Optional JavaScript -->
+  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+    <script src="js/discover.js"></script>
+</body>
 </html>
