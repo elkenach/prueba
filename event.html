@@ -40,16 +40,18 @@
 				<div class="enlaces" id="enlaces">
 					<a href="dashboard.html" id="enlace-home" class="btn-header">Dashboard</a>
 					<a href="sports.html" id="enlace-descubre" class="btn-header">Sports</a>
-					<a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Eventos</span></a>
+					<div class="drop">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>&#9776;</span></a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        					<a class="dropdown-item" href="profile.html">Perfil</a>
+        					<a class="dropdown-item" href="publication.html">Publicación</a>
+        				</div>
+					</div>
+					<div class="drop">
+						<a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Eventos</span></a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
         					<a class="dropdown-item" href="event.html">Evento</a>
         					<a class="dropdown-item" href="calendar_display.html">Calendario</a>
-        				</div>
-
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>&#9776;</span></a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        					<a class="dropdown-item" href="profile.html">Perfil</a>
-        					<a class="dropdown-item" href="postPublication.html">Publicación</a>
         				</div>
 				</div>
 			</div>
@@ -62,55 +64,7 @@
 	</header>
 
 	<section class="publication" id="content-event">
-		<div class="d-flex justify-content-center" id="publication_columns">
-			
-			<div class="p-5" id="publication__content">
-				
-				<h2 class="publication__h2--title">Sesión de Kayaking en Samao</h2>
-				<img src="https://images.pexels.com/photos/1497587/pexels-photo-1497587.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" id="publication__img">
-				<div class="publication__description" id="publication__description">
-					<div class="publication__description--tag">
-						<a href="">Kayak</a>
-						<a href="">Event</a>	
-					</div>
-					
-					<p>Este evento esta enfocado para toda la familia, podras aventurarte a realizar Kayaking en el lago de Samao, ingresa al link para mayores informes!</p>
-				</div>
-
-				<!--calendario-->
-				<div>
-					<input id="dateTime" width="234" />
-				    <script>
-				        $('#dateTime').datetimepicker({
-				            uiLibrary: 'bootstrap4',
-				            footer: true
-				        });
-				    </script>
-				</div>
-
-			</div>
-				
-
-			
-
-			 
-			</div>
-
-		
-		<div class="d-flex p-5 ">
-						
-			<div class="d-flex justify-content-between" id="publication__map">
-			<div></div>	
-			<div  id="googleMap"></div>
-			<div></div>
-			</div>
-			
-		</div>	
-
-		
-		
-
-
+	
 	</section>
  	
  	<footer id="contacto">

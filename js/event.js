@@ -1,10 +1,11 @@
 var idEvent =  localStorage.getItem('idEvent');
+var divMap=document.createElement("div");
+
 function getEvents(){
 	var requestEvent = new XMLHttpRequest(); //creando objeto 
 	requestEvent.onreadystatechange = function(){
 		if (this.readyState ==4 && this.status ==200) {
 			var responseEvent = this.responseText;
-			//console.log(JSON.parse(responseEvent));
 			displayEvent(JSON.parse(responseEvent));
 		}
 	}
@@ -16,7 +17,6 @@ function getEvents(){
 function displayEvent(dataEvent){
 
 	let event =dataEvent;
-	//console.log(dataEvent);
 
 	var divContent=document.getElementById("content-event");
 	
@@ -36,7 +36,6 @@ function displayEvent(dataEvent){
 		let divMapContainer=document.createElement("div");
 		let divMapContainerChild=document.createElement("div");
 		let divNull1=document.createElement("div");
-		let divMap=document.createElement("div");
 		let divNull2=document.createElement("div");
 
 		
@@ -81,8 +80,107 @@ function displayEvent(dataEvent){
 		divMapContainer.appendChild(divMapContainerChild);
 
 		console.log(event);
+		loadMapRoute();
+}
+
+function loadMapRoute(){
+let myMap;
+let firstMarkerIcon = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+// hardcoded values
+let position = [];
 	
+loadRoute();
+function initMap() {
+	    let startPosition = {"lat":position[0].lat, "lng":position[0].lng}; 
+	    var mapProp = {
+        center: startPosition,
+        disableDoubleClickZoom: true,
+		zoom: 12
+	};
+	myMap = new google.maps.Map(divMap, mapProp);
+    
+    let markersArray = [];
+    let myPolyline;
+	// chack if map was initialized
+	if (myMap) {
+		// add functions that places a marker on clicked point in map
+            // create, prepare, and push marker into array
+            for(let i in position)
+            {
+	            let myMarker = placeMarker(position[i], myMap);
+	            if (markersArray.length === 0) {
+	                myMarker.setIcon(firstMarkerIcon);
+	            }
+	            markersArray.push(myMarker);
+	            updateInfo(myMarker, markersArray);
+	            if(myPolyline) {
+	                deletePolyline(myPolyline);
+	            }
+	            myPolyline = drawPolyline(markersArray, myMap);
+			}
+    }
 
+}
 
+function deletePolyline (poly) {
+    poly.setMap(null);
+    poly = null;
+}
 
+// returns the new marker but it must be handled wherever this function is called
+function placeMarker(latLng, map) {
+	return new google.maps.Marker({position: latLng, map: map});
+}
+
+function updateInfo(marker, markersArray) {  
+    for (let m of markersArray) {
+        if (m === marker) {
+            m.setAnimation(google.maps.Animation.BOUNCE);
+        }
+        else {
+            m.setAnimation(null);
+        }
+    }
+}
+
+ function drawPolyline(points = [], map) {
+    if (points.length === 0) return;
+	let pathPoints;
+	if (points[0].getPosition) {
+		pathPoints = points.map(point => point.getPosition());
+	}
+	else {
+		pathPoints = points;
+	}
+	var path = new google.maps.Polyline({
+		path: pathPoints,
+		geodesic: true,
+		strokeColor: '#649150',
+		strokeOpacity: 1.0,
+		strokeWeight: 2
+	});
+
+	path.setMap(map);
+	return path;
+}
+
+	function loadRoute(){
+		//Objeto para hacer peticiones
+		var request = new XMLHttpRequest();
+		request.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200) {
+			var responseEvent = this.responseText;
+			processData(JSON.parse(responseEvent));
+			}	
+		}
+		request.open("GET", "http://localhost:8080/v1/events/by?id=" + idEvent,true)
+		request.send();
+	}
+	function processData(data){
+		let points = data.route[0].coordinate;
+	 	for(let i in points){
+	 		position.push({"lat":points[i].lat, "lng":points[i].lng});
+	 	}
+	 	initMap();
+	}
 }
